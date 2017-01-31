@@ -1,0 +1,20 @@
+parser: babel-eslint
+extends: 'airbnb'
+env:
+  browser: true
+  node: true
+  mocha: true
+plugins:
+  - react
+  - jsx-a11y
+  - import
+rules:
+  no-console: off
+  comma-dangle: off
+  func-names: off
+  jsx-indent: off
+  tab: off
+  indent: off
+  react/prefer-stateless-function:
+    - error
+    - ignorePureComponents: true
