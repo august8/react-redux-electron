@@ -1,15 +1,14 @@
 {
   "name": "react-template",
-  "version": "1.0.0",
-  "description": "mysql react express sample",
+  "version": "1.2.0",
+  "description": "react-redux-electron",
   "main": "app.js",
   "author": "hazuki",
   "license": "MIT",
   "scripts": {
     "start": "set NODE_ENV=development && electron main.js",
-    "start-web-dev-server": "webpack-dev-server",
     "lint": "eslint  src/**/*.{js,jsx}",
-    "lint-scripts": "eslint  scripts/**/*.{js,jsx}",
+    "lint-scripts": "eslint  ./scripts/**/*.{js,jsx}",
     "build": "webpack --progress",
     "releaseBuild": "webpack --progress -p",
     "packageBuild": "electron-packager . react-template --platform=darwin,win32 --version=1.0.0 "

@@ -1,7 +1,7 @@
 # react-redux-electron
 react-redux-electron
 
-reactとreduxを使ったelectronを作る際に使う。
+react-reduxを使ったelectronを作る際に使う。
 
 ```sh
 $ npm install
