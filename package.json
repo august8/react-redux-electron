@@ -10,9 +10,8 @@
     "start-web-dev-server": "webpack-dev-server",
     "lint": "eslint  src/**/*.{js,jsx}",
     "lint-scripts": "eslint  scripts/**/*.{js,jsx}",
-    "build": "set NODE_ENV=development && webpack --progress",
-    "build-scripts": "set NODE_ENV=development && webpack --config webpack-scripts.config.babel.js --progress",
-    "releaseBuild": "set NODE_ENV=production && webpack --progress",
+    "build": "webpack --progress",
+    "releaseBuild": "webpack --progress -p",
     "packageBuild": "electron-packager . react-template --platform=darwin,win32 --version=1.0.0 "
   },
   "dependencies": {
@@ -45,9 +44,7 @@
     "eslint-plugin-jsx-a11y": "^2.2.3",
     "eslint-plugin-react": "^6.2.0",
     "html-loader": "^0.4.4",
-    "json-loader": "^0.5.4",
     "style-loader": "^0.13.1",
-    "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack": "^2.2.1"
   }
 }

@@ -2,43 +2,48 @@ import webpack from 'webpack';
 import path from 'path';
 import packageInfo from './package.json';
 
-const devtool = process.env.NODE_ENV === 'production' ? '#eval' : '#inline-source-map';
-
 export default {
-    devtool,
     entry: [
         path.join(__dirname, 'src/main'),
     ],
     output: {
-        filename: path.join(__dirname, 'dist/bundle.js'),
-    },
-    devServer: {
-        contentBase: 'dist',
-        port: 3000
+        path: path.join(__dirname, 'dist'),
+        filename: 'bundle.js'
     },
     module: {
-        loaders: [
-            {
-                test: /\.jsx?$/,
-                loader: 'babel',
-                exclude: /node_modules/,
-            },
-            {
-                test: /\.json?$/,
-                loader: 'json',
-            },
-            // {
-            //     test: /\.css?$/,
-            //     loader: 'style!css',
-            // },
+        rules: [
+          {
+            test: /\.css$/,
+            use: [
+              {
+                loader: 'style-loader'
+              },
+              {
+                loader: 'css-loader',
+                options: {
+                  modules: true
+                }
+              }
+            ]
+          },
+          {
+            test: /\.jsx?$/,
+            loader: 'babel-loader',
+            exclude: /node_modules/,
+          }
         ],
     },
     resolve: {
-        root: path.join(__dirname, 'src'),
-        extensions: ['', '.js', '.jsx'],
+      modules: [
+        path.join(__dirname, 'src'),
+        'node_modules'
+      ],
+      extensions: [
+        '.js',
+        '.jsx'
+      ],
     },
     plugins: [
-        // new webpack.optimize.UglifyJsPlugin(),
         new webpack.DefinePlugin({
             'process.env': {
                 NODE_ENV: JSON.stringify(process.env.NODE_ENV || 'production'),
