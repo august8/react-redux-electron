@@ -8,9 +8,7 @@
   "scripts": {
     "start": "set NODE_ENV=development && electron main.js",
     "lint": "eslint  src/**/*.{js,jsx}",
-    "lint-scripts": "eslint  ./scripts/**/*.{js,jsx}",
-    "build": "webpack --progress",
-    "releaseBuild": "webpack --progress -p",
+    "build": "webpack -p",
     "packageBuild": "electron-packager . react-template --platform=darwin,win32 --version=1.0.0 "
   },
   "dependencies": {
