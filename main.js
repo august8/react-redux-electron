@@ -23,7 +23,7 @@ function createWindow() {
 
   mainWindow.loadURL(`file://${__dirname}/dist/index.html`);
   // if (process.env.NODE_ENV !== 'production') {
-    mainWindow.webContents.openDevTools();
+  mainWindow.webContents.openDevTools();
   // }
 
   mainWindow.on('closed', () => {

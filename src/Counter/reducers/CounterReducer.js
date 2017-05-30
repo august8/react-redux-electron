@@ -2,7 +2,7 @@ import Immutable from 'immutable';
 import { ACTION_INCREMENT, ACTION_DECREMENT } from '../constants/ActionTypes';
 
 const initialState = Immutable.Map({
-  count: 0
+  count: 0,
 });
 
 const couterReducer = (state = initialState, action) => {
